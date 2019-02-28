@@ -31,7 +31,7 @@ app.get('/api/timestamp/:date_string?', (req, res) => {
   let date = new Date(date_param || Date.now());
   res.json({ 
     "unix": isNaN(date) ? null : date.getTime(), 
-    "utc": isNaN(date) ? date : date.toUTCString() 
+    "utc": date.toUTCString()
   });
 });
 
